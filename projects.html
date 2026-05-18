@@ -35,8 +35,8 @@
           <header class="project-card-head">
             <h3>LeetCode Tracker</h3>
           </header>
-          <div class="project-media" width="100%" height="auto">
-            <img src="src/leetcode-tracker.png" alt="LeetCode Tracker preview" class="project-thumb" width="100%" height="auto" object-fit="contain" display="block">
+          <div class="project-media">
+            <img src="src/leetcode-tracker.png" alt="LeetCode Tracker preview" class="project-thumb">
           </div>
           <div class="project-body">
             <p>Progress automation app that tracks LeetCode performance and sends daily email summaries.</p>
@@ -70,40 +70,40 @@
 
         <article class="project-card">
           <header class="project-card-head">
-            <h3>DeployBot</h3>
+            <h3>AI-ML forecasting</h3>
           </header>
           <div class="project-media">
-            <img src="https://placehold.co/600x360/1e293b/e2e8f0?text=DeployBot" alt="DeployBot preview" class="project-thumb" width="600" height="360">
+            <img src="src/ai-ml-pipeline.png" alt="Forecasting pipeline class="project-thumb" width="100%" height="100%">
           </div>
           <div class="project-body">
-            <p>Automation for deploy checks, health pings, and incident alerts for small teams.</p>
+            <p>End-to-end AI/ML pipeline for forecasting, orchestration, storage, monitoring, and deployment.</p>
             <ul class="project-bullets">
-              <li>Staged rollouts and structured logs.</li>
-              <li>Docker-based previews per PR.</li>
+              <li>Airflow DAGs manage data ingestion, preprocessing, model training, and deployment.</li>
+              <li>MinIO stores raw data, trained models, and predictions; Docker + Kubernetes run the pipeline.</li>
+              <li>React frontend displays forecasts, while Prometheus/Grafana + ELK track metrics and logs.</li>
             </ul>
             <div class="project-meta-row">
               <span class="meta-label">Links:</span>
               <div class="icon-rail">
-                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository">
+                <a href="https://github.com/konan625/AI-ML-Pipeline" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository">
                   <img src="https://cdn.simpleicons.org/github/ffffff" alt="" width="17" height="17">
-                </a>
-                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Live demo">
-                  <img src="https://cdn.simpleicons.org/vercel/ffffff" alt="" width="17" height="17">
                 </a>
               </div>
             </div>
             <div class="project-meta-row">
               <span class="meta-label">With:</span>
               <div class="icon-rail">
-                <span class="tech-pill" title="Next.js"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt="Next.js"></span>
-                <span class="tech-pill" title="TypeScript"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript"></span>
+                <span class="tech-pill" title="Apache Airflow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apacheairflow/apacheairflow-original.svg" alt="Airflow"></span>
+                <span class="tech-pill" title="Kubernetes"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes"></span>
                 <span class="tech-pill" title="Docker"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker"></span>
+                <span class="tech-pill" title="React"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React"></span>
+
               </div>
             </div>
           </div>
         </article>
 
-        <article class="project-card">
+        <!-- <article class="project-card">
           <header class="project-card-head">
             <h3>TaskFlow</h3>
           </header>
@@ -136,7 +136,7 @@
               </div>
             </div>
           </div>
-        </article>
+        </article> -->
       </div>
     </section>
   </main>
