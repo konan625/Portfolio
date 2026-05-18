@@ -18,7 +18,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="skills.html">Skills</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="about.html">Contributions</a></li>
       </ul>
     </nav>
   </header>
@@ -40,11 +40,7 @@
           </div>
           <div class="project-body">
             <p>Progress automation app that tracks LeetCode performance and sends daily email summaries.</p>
-            <ul class="project-bullets">
-              <li>Built full-stack app with Node.js, Express, MongoDB, JWT auth, and bcrypt hashing.</li>
-              <li>Fetched LeetCode submissions via GraphQL + REST, merged data for accurate daily deltas.</li>
-              <li>Automated email digests with Nodemailer, Gmail SMTP, and node-cron on an 11PM IST schedule.</li>
-            </ul>
+            <a href="https://github.com/konan625/leetcode-tracker" target="_blank" rel="noopener noreferrer" class="project-learn-more">Learn More →</a>
             <div class="project-meta-row">
               <span class="meta-label">Links:</span>
               <div class="icon-rail">
@@ -77,11 +73,7 @@
           </div>
           <div class="project-body">
             <p>End-to-end AI/ML pipeline for forecasting, orchestration, storage, monitoring, and deployment.</p>
-            <ul class="project-bullets">
-              <li>Airflow DAGs manage data ingestion, preprocessing, model training, and deployment.</li>
-              <li>MinIO stores raw data, trained models, and predictions; Docker + Kubernetes run the pipeline.</li>
-              <li>React frontend displays forecasts, while Prometheus/Grafana + ELK track metrics and logs.</li>
-            </ul>
+            <a href="https://github.com/konan625/AI-ML-Pipeline" target="_blank" rel="noopener noreferrer" class="project-learn-more">Learn More →</a>
             <div class="project-meta-row">
               <span class="meta-label">Links:</span>
               <div class="icon-rail">
@@ -112,10 +104,7 @@
           </div>
           <div class="project-body">
             <p>Real-time task board with presence, mentions, and reminders across workspaces.</p>
-            <ul class="project-bullets">
-              <li>WebSocket sync with optimistic UI.</li>
-              <li>Roles, audit feed, and Postgres-backed history.</li>
-            </ul>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="project-learn-more">Learn More →</a>
             <div class="project-meta-row">
               <span class="meta-label">Links:</span>
               <div class="icon-rail">
@@ -146,5 +135,39 @@
   </footer>
 
   <script type="module" src="script.js"></script>
+  <script>
+    document.querySelectorAll('.project-card').forEach(card => {
+      let firstHoverDone = false;
+      let isAutoFlipping = false;
+      
+      card.addEventListener('mouseenter', () => {
+        // Only flip on first hover
+        if (!firstHoverDone) {
+          card.classList.add('flipped');
+          isAutoFlipping = true;
+          firstHoverDone = true;
+          
+          // Auto-flip back after 2 seconds
+          setTimeout(() => {
+            if (isAutoFlipping) {
+              card.classList.remove('flipped');
+              isAutoFlipping = false;
+            }
+          }, 2000);
+        }
+      });
+      
+      // Toggle flip on click (but not on links or icons)
+      card.addEventListener('click', (e) => {
+        if (firstHoverDone && !isAutoFlipping) {
+          // Don't toggle if clicking on links or icon-rail elements
+          if (!e.target.closest('a') && !e.target.closest('.icon-rail')) {
+            e.preventDefault();
+            card.classList.toggle('flipped');
+          }
+        }
+      });
+    });
+  </script>
 </body>
 </html>
