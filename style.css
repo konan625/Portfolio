@@ -155,13 +155,25 @@ body[data-page="skills"] .brand {
 }
 
 .nav-links a {
-  color: #f8fafc;
+  /* color: #f8fafc; */
   text-decoration: none;
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  /* font-family: "Playfair Display", Georgia, "Times New Roman", serif;
   font-style: italic;
   font-weight: 600;
   font-size: 1rem;
-  transition: color 0.15s ease, opacity 0.15s ease;
+  transition: color 0.15s ease, opacity 0.15s ease; */
+  color: #f8fafc;
+  text-decoration: none;
+  /* font-family: "Playfair Display", Georgia, "Times New Roman", serif; */
+  /* font-style: italic; */
+  font-weight: 600;
+  font-size: 1.5rem;
+  /* transition: color 0.15s ease, opacity 0.15s ease; */
+  margin: 0 0 0.5rem;
+  /* font-size: clamp(1.35rem, 3vw, 1.65rem); */
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text);
 }
 
 .nav-links a:hover {
@@ -288,16 +300,6 @@ body[data-page="skills"] .brand {
   color: var(--text);
 }
 
-.section-head h2::before {
-  content: "/ ";
-  color: var(--accent);
-  font-weight: 600;
-}
-
-.section-head--plain h2::before {
-  content: none;
-}
-
 .skills-page-title {
   margin: 0 0 4.5rem;
   font-size: clamp(1.5rem, 2.1vw, 1.75rem);
@@ -347,8 +349,8 @@ body[data-page="skills"] .brand {
 
 .project-card-head h3 {
   margin: 0;
-  font-family: "Playfair Display", Georgia, serif;
-  font-style: italic;
+  /* font-family: "Playfair Display", Georgia, serif; */
+  /* font-style: italic; */
   font-weight: 600;
   font-size: 1.08rem;
   color: #fff;
@@ -365,7 +367,7 @@ body[data-page="skills"] .brand {
 .project-thumb {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   display: block;
 }
@@ -383,7 +385,7 @@ body[data-page="skills"] .brand {
 .project-body > p {
   margin: 0;
   color: #e2e8f0;
-  font-family: Georgia, "Times New Roman", serif;
+  /* font-family: Georgia, "Times New Roman", serif; */
   font-size: 0.94rem;
   font-weight: 700;
   line-height: 1.15;
@@ -397,7 +399,7 @@ body[data-page="skills"] .brand {
 }
 
 .project-meta-row .meta-label {
-  font-family: Georgia, "Times New Roman", serif;
+  /* font-family: Georgia, "Times New Roman", serif; */
   font-size: 0.95rem;
   font-weight: 400;
   color: #cbd5e1;
