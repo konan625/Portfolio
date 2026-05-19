@@ -254,9 +254,9 @@ window.addEventListener("resize", () => {
 });
 
 const phrases = [
-  "I build digital experiences.",
-  "Full stack developer - clean UI, solid systems.",
-  "I turn ideas into reliable web products."
+  "Software Engineer focused on scale, infra & performance.",
+  "Building backend systems that survive scale.",
+  "Distributed systems • Kafka • FastAPI • Kubernetes"
 ];
 const typeEl = document.getElementById("typewriter");
 let pIndex = 0;
@@ -285,3 +285,20 @@ function typeLoop() {
 }
 
 if (typeEl) typeLoop();
+
+const linkedInCard = document.querySelector(".hero-profile-card");
+const linkedInBadge = linkedInCard?.querySelector(".LI-profile-badge");
+
+if (linkedInCard && linkedInBadge) {
+  const updateLinkedInFallback = () => {
+    const hasRenderedBadge = Boolean(linkedInBadge.querySelector("iframe")) || linkedInBadge.children.length > 1;
+    linkedInCard.classList.toggle("linkedin-loaded", hasRenderedBadge);
+  };
+
+  updateLinkedInFallback();
+  setTimeout(updateLinkedInFallback, 1200);
+  setTimeout(updateLinkedInFallback, 3000);
+
+  const observer = new MutationObserver(updateLinkedInFallback);
+  observer.observe(linkedInBadge, { childList: true, subtree: true });
+}

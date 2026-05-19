@@ -348,8 +348,11 @@ body[data-page="about"] .nav-links a[href="about.html"] .nav-icon svg {
 .hero {
   padding-block: clamp(3.5rem, 12vw, 6.5rem);
   min-height: calc(100svh - 72px);
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 40rem) minmax(20rem, 25rem);
+  gap: clamp(1.5rem, 4vw, 3rem);
   align-items: center;
+  justify-content: center;
 }
 
 body[data-page="home"] .hero {
@@ -359,6 +362,203 @@ body[data-page="home"] .hero {
 
 .hero-inner {
   max-width: 42rem;
+}
+
+.hero-profile-card {
+  --profile-accent: #22d3ee;
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 24rem);
+  min-height: 18rem;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--profile-accent) 44%, rgba(255, 255, 255, 0.2));
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 50% -8%, color-mix(in srgb, var(--profile-accent) 40%, transparent), transparent 46%),
+    linear-gradient(180deg, rgba(24, 37, 78, 0.92), rgba(8, 15, 36, 0.96));
+  box-shadow:
+    0 24px 48px rgba(0, 0, 0, 0.42),
+    0 0 42px color-mix(in srgb, var(--profile-accent) 26%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.hero-profile-card::before,
+.hero-profile-card::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hero-profile-card::before {
+  inset: 0;
+  background:
+    linear-gradient(120deg, transparent 0 38%, rgba(255, 255, 255, 0.16) 48%, transparent 58%),
+    radial-gradient(circle at 50% 112%, color-mix(in srgb, var(--profile-accent) 38%, transparent), transparent 48%);
+  opacity: 0.75;
+}
+
+.hero-profile-card::after {
+  inset: auto 2rem 1.2rem;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--profile-accent);
+  box-shadow: 0 0 18px var(--profile-accent);
+  opacity: 0.85;
+}
+
+.hero-profile-card .LI-profile-badge,
+.hero-profile-card iframe {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+}
+
+.hero-profile-card .LI-profile-badge {
+  min-width: 330px;
+  min-height: 257px;
+}
+
+.hero-profile-card:has(iframe) .linkedin-fallback,
+.hero-profile-card.linkedin-loaded .linkedin-fallback {
+  display: none;
+}
+
+.hero-profile-card .badge-base__link {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.linkedin-fallback {
+  position: absolute;
+  z-index: 2;
+  inset: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 1rem;
+  border-radius: 6px;
+  background: #000000;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+}
+
+.linkedin-fallback::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 46px;
+  border-radius: 6px 6px 0 0;
+  background: #38434f;
+}
+
+.linkedin-fallback-brand {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 1.75rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.linkedin-fallback-brand span {
+  display: inline-grid;
+  place-items: center;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-left: 0.1rem;
+  border-radius: 2px;
+  background: #ffffff;
+  color: #38434f;
+  font-size: 0.72rem;
+  letter-spacing: -0.04em;
+}
+
+.linkedin-fallback-photo {
+  position: relative;
+  z-index: 1;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 0.85rem;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #111827;
+}
+
+.linkedin-fallback-copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.18rem;
+  margin-bottom: 0.85rem;
+}
+
+.linkedin-fallback-copy h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.linkedin-fallback-copy p,
+.linkedin-fallback-copy span {
+  margin: 0;
+  font-size: 0.84rem;
+  font-weight: 400;
+  line-height: 1.28;
+}
+
+.linkedin-fallback-copy span {
+  max-width: 17.5rem;
+}
+
+.linkedin-fallback-cta {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.2rem;
+  padding: 0 1rem;
+  border: 1.5px solid #ffffff;
+  border-radius: 999px;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    justify-content: stretch;
+    gap: 2rem;
+  }
+
+  .hero-inner {
+    max-width: 42rem;
+    width: 100%;
+  }
+
+  .hero-profile-card {
+    width: min(100%, 24rem);
+    justify-self: start;
+  }
 }
 
 .hero-eyebrow {
@@ -934,7 +1134,7 @@ body[data-page="home"] .hero {
   justify-content: center;
   min-height: 88px;
   padding: 1.1rem 0.8rem 0.55rem;
-  background: transparent;
+  background: #ffffffa8;
 }
 
 .skill-tile-icon img {
@@ -974,6 +1174,20 @@ body[data-page="home"] .hero {
 }
 
 @media (max-width: 600px) {
+  .hero {
+    grid-template-columns: 1fr;
+    justify-content: stretch;
+  }
+
+  .hero-profile-card {
+    width: 100%;
+    min-height: 18rem;
+  }
+
+  .linkedin-card {
+    min-height: 16rem;
+  }
+
   .hero-actions {
     gap: 0.75rem;
   }
