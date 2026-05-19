@@ -1,13 +1,15 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Aanchal Sharma — About</title>
-  <meta name="description" content="About Aanchal Sharma" />
+  <title>Aanchal Sharma — Contributions</title>
+  <meta name="description" content="Open source contributions by Aanchal Sharma" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body data-page="about">
   <canvas id="bg3d" aria-hidden="true"></canvas>
 
@@ -15,10 +17,10 @@
     <nav class="nav" role="navigation" aria-label="Main">
       <!-- <a href="index.html" class="brand">Aanchal</a> -->
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="index.html"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5V21h-6v-6H9v6H3v-9.5Z"/></svg></span><span>Home</span></a></li>
+        <li><a href="projects.html"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6.5h6l2 2H20v9.5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6.5Z"/></svg></span><span>Projects</span></a></li>
+        <li><a href="skills.html"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 4 7v10l8 4 8-4V7l-8-4Zm0 0v18M4 7l8 4 8-4"/></svg></span><span>Skills</span></a></li>
+        <li><a href="about.html"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 18a4 4 0 0 0-8 0M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm6 8H6"/></svg></span><span>Contributions</span></a></li>
       </ul>
     </nav>
   </header>
@@ -39,8 +41,67 @@
       </p>
 
       <div class="connect-links">
-        <a class="btn btn-outline" href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn" href="mailto:youremail@example.com">Email me</a>
+        <a class="btn" href="https://github.com/konan625?tab=contributions" target="_blank" rel="noopener noreferrer">View GitHub contributions</a>
+        <a class="btn btn-outline" href="https://mail.google.com/mail/?view=cm&fs=1&to=aanchal625121@gmail.com" target="_blank" rel="noopener noreferrer">Email me</a>
+      </div>
+
+      <div class="contributions-grid">
+        <article class="contribution-card">
+          <div class="contribution-card-thumb">
+            <img src="src/ai-ml-pipeline.png" alt="AI-ML Pipeline" />
+          </div>
+          <div class="contribution-card-body">
+            <h3>AI-ML Pipeline</h3>
+            <p>Reliable orchestration for forecasting, deployment, and monitoring.</p>
+            <div class="contribution-card-meta">
+              <span class="meta-label">Feature</span><span>Dag orchestration</span>
+            </div>
+            <div class="contribution-card-meta">
+              <span class="meta-label">Stack</span><span>Airflow · Kubernetes · Docker</span>
+            </div>
+            <div class="contribution-card-meta">
+              <span class="meta-label">Link</span><a href="https://github.com/konan625/AI-ML-Pipeline" target="_blank" rel="noopener noreferrer">View repo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="contribution-card">
+          <div class="contribution-card-thumb">
+            <img src="src/leetcode-tracker.png" alt="LeetCode Tracker" />
+          </div>
+          <div class="contribution-card-body">
+            <h3>LeetCode Tracker</h3>
+            <p>Automated progress reports and daily summary emails for practice workflows.</p>
+            <div class="contribution-card-meta">
+              <span class="meta-label">Feature</span><span>Automated email summaries</span>
+            </div>
+            <div class="contribution-card-meta">
+              <span class="meta-label">Stack</span><span>Node.js · Express · MongoDB</span>
+            </div>
+            <div class="contribution-card-meta">
+              <span class="meta-label">Link</span><a href="https://github.com/konan625/leetcode-tracker" target="_blank" rel="noopener noreferrer">View repo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="contribution-card">
+          <div class="contribution-card-thumb placeholder-thumb">
+            <div class="thumb-label">Docs</div>
+          </div>
+          <div class="contribution-card-body">
+            <h3>Community tooling</h3>
+            <p>Docs, CI fixes, and developer tooling improvements across public repos.</p>
+            <div class="contribution-card-meta">
+              <span class="meta-label">Feature</span><span>Documentation & CI</span>
+            </div>
+            <div class="contribution-card-meta">
+              <span class="meta-label">Stack</span><span>GitHub · Markdown · YAML</span>
+            </div>
+            <div class="contribution-card-meta">
+              <span class="meta-label">Link</span><a href="https://github.com/konan625?tab=contributions" target="_blank" rel="noopener noreferrer">View contributions</a>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
   </main>
@@ -51,4 +112,5 @@
 
   <script type="module" src="script.js"></script>
 </body>
+
 </html>
